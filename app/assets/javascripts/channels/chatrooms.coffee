@@ -8,7 +8,11 @@
   received: (data) ->
     active_chatroom = $("[data-behavior='messages'][data-chatroom-id='#{data.chatroom_id}']")
     if active_chatroom.length > 0
-      active_chatroom.append(data.message)
+      active_chatroom.append("<div class='panel panel-info'><div class='panel-heading'><h3 class='panel-title'>User <strong>#{data.username}</strong> wrote:</h3></div><div class='panel-body'>#{data.body}</div></div>")
+
+      if document.hidden && Notification.permission == "granted"
+        new Notification(data.username, {body: data.body})
+
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
 

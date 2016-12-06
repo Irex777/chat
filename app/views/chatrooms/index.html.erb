@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<div class="w3-center">
+
+
 
 <h1>Chatrooms</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+  <table class="w3-table">
     <% @chatrooms.each do |chatroom| %>
-      <tr>
-        <td><%= chatroom.name %></td>
-        <td><%= link_to 'Show', chatroom %></td>
-        <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
-        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
-      </tr>
+    <tr>
+        <th><%= chatroom.name %></th>
+    </tr>
+    <tr>
+        <td><%= link_to 'Show', chatroom, class:"" %></td>
+        <td><%= link_to 'Edit', edit_chatroom_path(chatroom), class:"" %></td>
+        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' }, class:"" %></td>
+        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post, class:"" %></td>
+        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete, class:"" %></td>
+    </tr>
     <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Chatroom', new_chatroom_path %>
+      <%= link_to 'New Chatroom', new_chatroom_path, class:"btn btn btn-default" %>
+
+  <% else %>
+    <h1>hello</h1>
+<% end %>
+
+</div>

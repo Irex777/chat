@@ -1,1 +1,9 @@
-<div><strong><%= message.user.username %>:</strong> <%= message.body %> </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">User <strong><%= message.user.username %></strong> wrote:</h3>
+    </div>
+    <div class="panel-body">
+    <%= message.body %>
+    </div>
+  </div>

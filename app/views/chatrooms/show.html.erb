@@ -1,4 +1,4 @@
-
+<div class="col-md-8 col-sm-offset-4">
 <p>
   <strong>Name:</strong>
   <%= @chatroom.name %>
@@ -13,3 +13,4 @@
 <%= form_for [@chatroom, Message.new] do |f| %>
   <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
 <% end %>
+</div>
