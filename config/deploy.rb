@@ -1,4 +1,4 @@
-lock '3.4.0'
+lock '3.7.1'
 
 set :application, 'chat'
 set :repo_url, 'git@github.com:Irex777/chat.git'

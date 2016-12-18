@@ -22,7 +22,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.0'
-gem 'net-ssh', '~> 4.0.0.alpha4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -30,28 +29,13 @@ gem 'net-ssh', '~> 4.0.0.alpha4'
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'puma'
+gem 'net-ssh'
+gem "capistrano", "~> 3.4"
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
 gem 'capistrano-rbenv'
-group :development do
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
-end
-
-
-group :development, :test do
-  gem 'byebug'
-  gem 'pg'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'capistrano3-puma'
+gem 'pg'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
